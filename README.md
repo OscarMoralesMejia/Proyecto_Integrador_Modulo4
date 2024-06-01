@@ -34,9 +34,9 @@ y debemos de ver la siguiente pantalla , podemos ejecutar el comando ls para ver
 ![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/8eb506b0-ff83-407f-bcb2-d1b10e0b423d)
 
 #### Paso 4.-Ejecutar archivo docker-compose
-Ejecutamos el archivo docker-compose para levantar el contenedor con la infraestructura hadoop con el siguiente comando
+Ejecutamos el archivo docker-compose para levantar el contenedor con la infraestructura hadoop con el siguiente comando ya que en el archivo docker-compose-v1.yml están la imagenes necesarias para levantar el servidor de nodo maestro los nodos esclavos datanodes asi como el servidor espejo.
 ```
-
+sudo docker-compose -f docker-compose-v1.yml up -d
 ```
 
 que copiar el set de datos origen hacia el sistema de archivos hadoop
