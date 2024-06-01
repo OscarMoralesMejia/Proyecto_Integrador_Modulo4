@@ -38,6 +38,25 @@ Ejecutamos el archivo docker-compose para levantar el contenedor con la infraest
 ```
 sudo docker-compose -f docker-compose-v1.yml up -d
 ```
+#### Paso 5.-Copiar datos
+Para copiar al contenedor los archivos de la carpeta Datasets primero accesamos al contenedor hadoop para crear dentro del contenedor una carpeta de igual nombre Datasets que será el destino de nuestros archivos fuente
+``` 
+sudo docker exec -it namenode bash
+```<br>
+nos movemos al directorio home y creamos una carpeta con el nombre Datasets con el siguiente código<br>
+```
+cd home
+mkdir Datasets
+exit
+```
+después nos salimos del contenedor de docker con el comando exit, por lo que regresamos al directorio de herramientas_big_data, recordando que con el comando pwd que significa print working directory para poder ver en que ruta estamos y poder lograr el copiado hacia la carpeta Datasets
+```
+sudo docker cp Datasets namenode:/home/Datasets
+```
+
+
+
+
 
 que copiar el set de datos origen hacia el sistema de archivos hadoop
 1.- HDFS<br>
