@@ -53,10 +53,7 @@ después nos salimos del contenedor de docker con el comando exit, por lo que re
 ```
 sudo docker cp Datasets namenode:/home/Datasets
 ```
-
-
-
-
+<br>
 
 que copiar el set de datos origen hacia el sistema de archivos hadoop
 1.- HDFS<br>
