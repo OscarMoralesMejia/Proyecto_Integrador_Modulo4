@@ -38,7 +38,7 @@ Ejecutamos el archivo docker-compose para levantar el contenedor con la infraest
 ```
 sudo docker-compose -f docker-compose-v1.yml up -d
 ```
-#### Paso 5.-Copiar datos
+#### Paso 5.-Copiar datos a carpeta dentro del contenedor
 Para copiar al contenedor los archivos de la carpeta Datasets primero accesamos al contenedor hadoop para crear dentro del contenedor una carpeta de igual nombre Datasets que será el destino de nuestros archivos fuente
 ``` 
 sudo docker exec -it namenode bash
@@ -49,18 +49,36 @@ cd home
 mkdir Datasets
 exit
 ```
-después nos salimos del contenedor de docker con el comando exit, por lo que regresamos al directorio de herramientas_big_data, recordando que con el comando pwd que significa print working directory para poder ver en que ruta estamos y poder lograr el copiado hacia la carpeta Datasets
+después nos salimos del contenedor de docker con el comando exit, por lo que regresamos al directorio de herramientas_big_data, recordando que con el comando pwd que significa print working directory podemos ver en que ruta estamos y poder lograr el copiado hacia la carpeta Datasets
 ```
-sudo docker cp Datasets namenode:/home/Datasets
+sudo docker cp Datasets  namenode:/home
 ```
 <br>
+#### Paso 6.-Crear directorio hdfs dentro del contenedor
+Ahora necesitamos crear una carpeta que llamaremos *data* dentro del hdfs, para esto entramos al contenedor namenode y creamos la carpeta con los siguientes comandos:
+```
+sudo docker exec -it namenode bash
+hdfs dfs -mkdir -p /data
+```
+Recordando que con el siguientes comandos podemos ver lo que hay dentro del sistema de archivos hdfs ya sea en raiz o en el directorio *data*
+```
+hdfs dfs -ls /
+hdfs dfs -ls /data
+```
+![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/53cc1449-2165-466f-a03c-857436f5e358)
 
-que copiar el set de datos origen hacia el sistema de archivos hadoop
-1.- HDFS<br>
-Primero montamos la imagen de NameNode de Hadoop en un servidor Linux Ubuntu
-lo que podemos ver en las siguientes imagenes:<br>
-![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/3726fcd7-18e2-4d10-80e6-3b315c607469)
+Por último ejecutamos el siguiente comando, para copiar dentro del contenedor en el directorio *data* todos los archivos que estan dentro de la carpeta Datasets
+```
+hdfs dfs -put /home/Datasets/* /data
+```
+Existe otra forma de hacer lo anterior generando las instrucciones en un archivo con extensión .sh
+
+#### Paso 7.- Checar contendedor
+Podemos checar que el contenedor de hadoop este arriba, los valores de tamaño de bloque y factor de replica y que los archivos se hayan cargado en el directorio hdfs.
+a) Para checar que este arriba el sistema de archivos hdfs podemos usar el explorador de internet con la siguiente url , se tiene que usar la ip de la maquina host(servidor linux ubuntu)
 ![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/d1eba69a-e912-4eb4-a5ab-25e574af7b83)
+b)para checar los valores de tamaño de bloque podemos usar algún explorador con la siguiente url en mi caso uso la ip de mi maquina virtual obteniendo lo siguiente en el explorador
+![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/3726fcd7-18e2-4d10-80e6-3b315c607469)
 El bloque dfs.blocksize es el siguiente:
 ```xml
 <property>
@@ -81,3 +99,5 @@ El dfs.replication es:
 <source>hdfs-default.xml</source>
 </property>
 ```
+c) Y para saber si estan cargados los archivos en el sistema hdfs  podemos entrar al contenedor y checar la ruta del la carpeta *data*
+![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/5573b2c0-fc43-4517-bad9-33c54c276304)
