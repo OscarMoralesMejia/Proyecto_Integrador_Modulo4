@@ -27,7 +27,8 @@ En la siguiente imagen podemos constatar que se ha creado la base de datos integ
 y podemos ver las tablas y la descripcion de alguna tabla para checar el formato que sea parquet
 ```
 use integrador2;
-
+show tables;
+describe formatted cliente;
 ```
 ![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/6ecae7ee-d77d-407c-be05-3252281354cd)
 ![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/24d6589b-d4dd-4463-9128-bf980cf94096)
