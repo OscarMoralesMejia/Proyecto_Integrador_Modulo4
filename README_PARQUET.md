@@ -1,5 +1,5 @@
 # Formatos de Almacenamiento
-#### Paso 1 Crear carpeta origen
+#### Paso 1.- Crear carpeta origen
 Volvemos a crear una carpeta para copiar nuevamente los datos le llamaremos data2 y lo hacemos con los siguientes comandos:
 a)Con la primer linea de comando entramos al contenedor namenode
 b)Con la segunda línea de comando creamos el directorio data2
@@ -9,7 +9,7 @@ sudo docker exec -it namenode bash
 hdfs dfs -mkdir -p /data2
 hdfs dfs -put /home/Datasets/* /data2
 ```
-#### Paso 2 Correr Script Parquet
+#### Paso 2.- Correr Script Parquet
 Para generar la base de datos en formato parquet se modifica el script de creación colocando en STORED AS PARQUET
 el archivo es:Paso03.hql
 Para esto entramos tenemos que ejecutar las siguientes lineas de comando:
