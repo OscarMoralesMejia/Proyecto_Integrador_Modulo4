@@ -25,11 +25,11 @@ Una vez conectados debemos ir al paso 3
 Podemos clonar el proyecto con el siguiente comando ejecutandolo en la terminal de putty.
 ```
 git clone https://github.com/soyHenry/DS-M4-Herramientas_Big_Data.git
-```
+```  
 Ya una vez que se clono el repositorio se tiene la carpeta herramientas_big_data a la cual accedemos con el comando:
 ```
 cd herramientas_big_data
-```
+```  
 y debemos de ver la siguiente pantalla , podemos ejecutar el comando ls para ver el contenido de dicha carpeta<br>  
 ![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/8eb506b0-ff83-407f-bcb2-d1b10e0b423d)
 
@@ -42,25 +42,28 @@ sudo docker-compose -f docker-compose-v1.yml up -d
 Para copiar al contenedor los archivos de la carpeta Datasets primero accesamos al contenedor hadoop para crear dentro del contenedor una carpeta de igual nombre Datasets que será el destino de nuestros archivos fuente
 ``` 
 sudo docker exec -it namenode bash
-```<br>
+```
+<br>
 nos movemos al directorio home y creamos una carpeta con el nombre Datasets con el siguiente código<br>
+
 ```
 cd home
 mkdir Datasets
 exit
-```
+```  
 después nos salimos del contenedor de docker con el comando exit, por lo que regresamos al directorio de herramientas_big_data, recordando que con el comando pwd que significa print working directory podemos ver en que ruta estamos y poder lograr el copiado hacia la carpeta Datasets
 ```
 sudo docker cp Datasets  namenode:/home
-```
-<br>
+```    
 #### Paso 6.-Crear directorio hdfs dentro del contenedor
 Ahora necesitamos crear una carpeta que llamaremos *data* dentro del hdfs, para esto entramos al contenedor namenode y creamos la carpeta con los siguientes comandos:
 ```
 sudo docker exec -it namenode bash
 hdfs dfs -mkdir -p /data
 ```
+
 Recordando que con el siguientes comandos podemos ver lo que hay dentro del sistema de archivos hdfs ya sea en raiz o en el directorio *data*
+
 ```
 hdfs dfs -ls /
 hdfs dfs -ls /data
