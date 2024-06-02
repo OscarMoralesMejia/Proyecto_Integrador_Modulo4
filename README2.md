@@ -25,6 +25,14 @@ ya dentro del contenedor de hive ejecutamos el siguiente comando
 hive -f /opt/hive/scripts/Paso02.hql
 ```
 y con esto logramos generar la base de datos con algunas tablas con datos proporcionados de los archivos que estan en la carpeta data de hdfs
+Podemos ver las tablas una vez entramos a hive con y corremos los siguientes comandos dentro de hive
+```
+show databases;
+use integrador;
+show tables;
+```  
+![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/0d0754ac-7d76-47c7-bf7e-2bcb084a2f23)
+
 
 
 
