@@ -3,11 +3,11 @@
 Volvemos a crear una carpeta para copiar nuevamente los datos le llamaremos data2 y lo hacemos con los siguientes comandos:
 a)Con la primer linea de comando entramos al contenedor namenode
 b)Con la segunda línea de comando creamos el directorio data2
-c)Con la tercer línea copiamos todo elcontenido de la carpeta Datasets a la carpeta data2
+c)Con la tercer línea copiamos todo elcontenido de la carpeta Datasets2 a la carpeta data2
 ```
 sudo docker exec -it namenode bash
 hdfs dfs -mkdir -p /data2
-hdfs dfs -put /home/Datasets/* /data2
+hdfs dfs -put /home/Datasets2/* /data2
 ```
 #### Paso 2.- Correr Script Parquet
 Para generar la base de datos en formato parquet se modifica el script de creación colocando en STORED AS PARQUET
