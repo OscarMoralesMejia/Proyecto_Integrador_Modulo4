@@ -10,9 +10,11 @@ Ya dentro de hive ejecutamos el siguiente comando:
 ```
 use integrador2;
 ```
-<br>
+
 Primero hacemos una consulta antes de generar el indice en la tabla venta
-![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/d20842e3-c139-42c0-b62f-41ba863fb994)
+
+![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/9405fd0d-53eb-4cf3-a0c3-c48cd29e4a13)
+
 
 Generamos el índice en la tabla con el siguiente comando:
 
@@ -23,4 +25,3 @@ Hacemos nuevamente la consulta para ver si mejoró el tiempo
 ![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/ca87aae7-b7bf-4f96-b8b9-7fe5bbe633a9)
 
 
-![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/a12c772a-bad8-47a1-8f4a-5ca4d3cb38e8)
