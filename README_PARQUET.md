@@ -31,7 +31,9 @@ show tables;
 describe formatted cliente;
 ```
 ![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/6ecae7ee-d77d-407c-be05-3252281354cd)
-Datos Parquet
+<br>
+Datos Parquet<br>
 ![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/9750f6e5-6504-4500-915f-376185035e4a)
-Datos scv
+<br>
+Datos scv<br>
 ![image](https://github.com/OscarMoralesMejia/Proyecto_Integrador_Modulo4/assets/159685580/24d6589b-d4dd-4463-9128-bf980cf94096)
